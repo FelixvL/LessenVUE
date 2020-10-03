@@ -1,0 +1,18 @@
+huiwerk-les2.html
+<script>
+	var sommen = [];
+	function daargaanwe(){
+		var mijnvar = document.getElementById("invoer").value;
+		var getal = parseInt(mijnvar);
+		sommen += "getal "+ getal +" is ingevoerd";
+		var eindtext = "";
+		for(var x = 0 ; x < sommen.length ; x++){
+			eindtext += sommen[x];
+		}
+		document.getElementById("demo").innerHTML = eindtext;
+	}
+</script>
+
+<input type=text id=invoer >
+<input type=button value=VrolijkeTekst onclick=daargaanwe()>
+<div id=demo></div>
