@@ -6,10 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <input name="getal1" type="number" name = "minValue" pattern="(|-)?[0-9]{0,3}?" id="min_value" value="" required/>
+    <input type="number" name = "minValue" pattern="(|-)?[0-9]{0,3}?" id="min_value" value="" required/>
 
-    <input name="getal2" type="number" name = "maxValue" pattern="(|-)?[0-9]{0,3}?" id="max_value" value="" required/>
-    
+    <input type="number" name = "maxValue" pattern="(|-)?[0-9]{0,3}?" id="max_value" value="" required/>
     
     <button type = "submit" name = "submitcheck" id = "submit_check"> Check! </button> 
 
@@ -17,19 +16,22 @@
     var frst = document.querySelector("#min_value");
     var secnd = document.querySelector("#max_value");
     var para = document.createElement("p");
+
     function blr(){
-    var ab = frst.value;
-    var vc = secnd.value;
-    if(ab == "" && vc == ""){
+    var eersteVeld = frst.value;
+    var tweedeVeld = secnd.value;
+    if(eersteVeld == "" && tweedeVeld == ""){
     para.textContent = "Voer in beide velden een nummer.";
     document.body.appendChild(para);
     }
-    else if(ab >= vc){
-    para.textContent = "Nummer in eerste veld is groter dan het tweede veld.";
+
+    else if(eersteVeld >= tweedeVeld){
+    para.textContent = "nummer in EERSTE veld is groter dan het tweede veld.";
     document.body.appendChild(para);
     }
-    else if(vc >= ab){
-        para.textContent = "Nummer in het tweede veld is groter dan in het eerste veld.";
+
+    else if(tweedeVeld >= eersteVeld){
+        para.textContent = "nummer in het TWEEDE veld is groter dan in het eerste veld.";
     document.body.appendChild(para);
   }
 }
