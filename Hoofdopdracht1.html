@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welk ingevoerd getal is groter?</title>
 </head>
 <body>
     <input type="number" name = "minValue" pattern="(|-)?[0-9]{0,3}?" id="min_value" value="" required/>
@@ -20,7 +20,7 @@
     function blr(){
     var eersteVeld = frst.value;
     var tweedeVeld = secnd.value;
-    if(eersteVeld == "" && tweedeVeld == ""){
+    if(eersteVeld == "" || tweedeVeld == ""){
     para.textContent = "Voer in beide velden een nummer.";
     document.body.appendChild(para);
     }
@@ -30,8 +30,8 @@
     document.body.appendChild(para);
     }
 
-    else if(tweedeVeld >= eersteVeld){
-        para.textContent = "nummer in het TWEEDE veld is groter dan in het eerste veld.";
+    else if(eersteVeld <= tweedeVeld){
+    para.textContent = "nummer in het TWEEDE veld is groter dan in het eerste veld.";
     document.body.appendChild(para);
   }
 }

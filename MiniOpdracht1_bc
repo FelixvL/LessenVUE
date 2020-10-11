@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form action="/action_page.php">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username"><br>
+        <input onclick="myFunction()" type="submit" value="Submit">
+      </form>
+
+    <!-- <input type="text" id="myInput" value="Mickey"> -->
+
+    <script>
+    // document.getElementById("myInput").addEventListener("input", myFunction);
+    
+    // function myFunction() {
+    //   alert("The value of the input field was changed.");
+    // }
+    // <button onclick="myFunction()">Try it</button>
+
+    function myFunction() {
+        var username;
+  if (InputEvent("hello")) {
+    username = "Welkom";
+  } else {
+    username = "jojo";
+  }
+  document.getElementById("demo").innerHTML = username;
+}
+    </script>
+    
+    </body>
+    </html>
+    
