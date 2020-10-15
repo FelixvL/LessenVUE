@@ -5,36 +5,27 @@
 <title>JavaScript form validation - checking all letters</title>
 </head>
 <body>
-  <input id="invoerVeld" value="">
+  <!-- <input id="invoerVeld" value="">
    
-   <input onclick="myFunction()" type="button" value="label">
+   <input onclick="myFunction()" type="button" value="label"> -->
+
+   <textarea name="message" rows="10" cols="60" onkeyup="countChars();"></textarea>
 
    <script>
-     function myFunction () {
-       var jojo= document.getElementById("invoerVeld");
-       for (var x =0; x <jojo.value.length; x++) {
-         console.log(jojo.value.charAt(x));
-         if (jojo.value.charAt(x) == "e") {
-           alert ("Zit een e in")
+    //  function myFunction () {
+    //    var jojo= document.getElementById("invoerVeld");
+    //    for (var x =0; x <jojo.value.length; x++) {
+    //      console.log(jojo.value.charAt(x));
+    //      if (jojo.value.charAt(x) == "e") {
+    //        alert ("Zit een e in")
 
-         }
-       }
-     }
-     function char_count(str, letter) {
-        //  var letterCount = document.getElementById("invoerVeld");
-         var letter_Count = 0;
-         for (var position = 0; position < str.length; position++) 
-        {
-        if (str.charAt(position) == letter) 
-        {
-        letter_Count += 1;
-      }
+    //      }
+    //    }
+    //  }
+//     
+    function countChars(obj){
+        document.getElementById('charNum').innerHTML = obj.value.length+' characters';
     }
-    return letter_Count;
-    }
-console.log(char_count('vergeten', 'e'));
-console.log(data);
-
    </script>
 </body>
 </html>
