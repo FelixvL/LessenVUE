@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+<title>JavaScript form validation - checking all letters</title>
 </head>
 <body>
-    <textarea id="textbox" onkeyup="charcountupdate(this.value)"> Start typing here to see results</textarea>
-    <span id=charcount></span>
+  <input id="invoerVeld" value="">
+   
+   <input onclick="myFunction()" type="button" value="label">
 
-<script>
-    function charcountupdate(str) {
-	var lng = str.length;
-	document.getElementById("charcount").innerHTML = lng + ' out of 400 characters';
-}
-</script>
+   <script>
+     function myFunction () {
+       var jojo= document.getElementById("invoerVeld");
+       for (var x =0; x <jojo.value.length; x++) {
+         console.log(jojo.value.charAt(x));
+         if (jojo.value.charAt(x) == "e") {
+           alert ("Zit een e in")
+
+         }
+       }
+     }
+     function char_count(str, letter) {
+        //  var letterCount = document.getElementById("invoerVeld");
+         var letter_Count = 0;
+         for (var position = 0; position < str.length; position++) 
+        {
+        if (str.charAt(position) == letter) 
+        {
+        letter_Count += 1;
+      }
+    }
+    return letter_Count;
+    }
+console.log(char_count('vergeten', 'e'));
+console.log(data);
+
+   </script>
 </body>
 </html>
