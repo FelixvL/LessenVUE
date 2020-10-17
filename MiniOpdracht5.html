@@ -5,113 +5,43 @@
 <title>JavaScript form validation - checking all letters</title>
 </head>
 <body>
-   
-    <div class="buttons">
-        <button onclick="toggleVisibility('A');">A</button>
-        <button onclick="toggleVisibility('B');">B</button>
-        <button onclick="toggleVisibility('C');">C</button>
-        <button onclick="toggleVisibility('D');">D</button>
-      </div>
-       
-        <div id="A">U heeft op knop A geklikt.</div>
-        <div id="B" style="display: none;">U heeft op knop B geklikt.</div>
-        <div id="C" style="display: none;">U heeft op knop C geklikt.</div>
-        <div id="D" style="display: none;">U heeft op knop D geklikt.</div>
-      
-   <script>
-    var divs = ["A", "B", "C", "D"];
-var visibleDivId = null;
-function toggleVisibility(divId) {
-  if(visibleDivId === divId) {
-    //visibleDivId = null;
-  } else {
-    visibleDivId = divId;
-  }
-  hideNonVisibleDivs();
-}
-function hideNonVisibleDivs() {
-  var i, divId, div;
-  for(i = 0; i < divs.length; i++) {
-    divId = divs[i];
-    div = document.getElementById(divId);
-    if(visibleDivId === divId) {
-      div.style.display = "block";
-    } else {
-      div.style.display = "none";
-    }
-  }
-}
-var divs = ["A", "B", "C", "D"];
-var visibleDivId = null;
-function toggleVisibility(divId) {
-  if(visibleDivId === divId) {
-    //visibleDivId = null;
-  } else {
-    visibleDivId = divId;
-  }
-  hideNonVisibleDivs();
-}
-function hideNonVisibleDivs() {
-  var i, divId, div;
-  for(i = 0; i < divs.length; i++) {
-    divId = divs[i];
-    div = document.getElementById(divId);
-    if(visibleDivId === divId) {
-      div.style.display = "block";
-    } else {
-      div.style.display = "none";
-    }
-  }
-}
-var divs = ["A", "B", "C", "D"];
-var visibleDivId = null;
-function toggleVisibility(divId) {
-  if(visibleDivId === divId) {
-    //visibleDivId = null;
-  } else {
-    visibleDivId = divId;
-  }
-  hideNonVisibleDivs();
-}
-function hideNonVisibleDivs() {
-  var i, divId, div;
-  for(i = 0; i < divs.length; i++) {
-    divId = divs[i];
-    div = document.getElementById(divId);
-    if(visibleDivId === divId) {
-      div.style.display = "block";
-    } else {
-      div.style.display = "none";
-    }
-  }
-}
 
-var divs = ["A", "B", "C", "D"];
-var visibleDivId = null;
-function toggleVisibility(divId) {
-  if(visibleDivId === divId) {
-    //visibleDivId = null;
-  } else {
-    visibleDivId = divId;
-  }
-  hideNonVisibleDivs();
-}
-function hideNonVisibleDivs() {
-  var i, divId, div;
-  for(i = 0; i < divs.length; i++) {
-    divId = divs[i];
-    div = document.getElementById(divId);
-    if(visibleDivId === divId) {
-      div.style.display = "block";
-    } else {
-      div.style.display = "none";
+    <button id=knop1 onclick=knoppencheck(this) > A</button>
+    <button id=knop2 onclick=knoppencheck(this) > B</button>
+    <button id=knop3 onclick=knoppencheck(this) > C</button>
+    <button id=knop4 onclick=knoppencheck(this) > D</button>
+
+    <div id="uitkomst"></div>
+
+    <!-- <div id="knop1">I'm A</div>
+    <div id="knop2" style="display: none;">I'm B</div>
+    <div id="C" style="display: none;">I'm C</div>
+    <div id="D" style="display: none;">I'm D</div>
+   -->
+   
+   <script>
+    var totaal = [];
+    function knoppencheck (afzender) {
+        alert (afzender.id);
+        if(afzender.id == "knop3") {
+            alert("U heeft op C geklikt");
+        }else{
+            alert("nee");
+        }
+        totaal.push("string");
+        var elem = document.getElementById("uitkomst");
+        // elem.innerHTML = totaal.length;
     }
-  }
-}
-const buttonElement = document.getElementById('button');
-buttonElement.addEventListener('click', function (event) {
-  alert('Element clicked through function!');
-});
+//     var divs = ["knop1", "knop2", "knop3", "knop4"];
+// var visibleDivId = null;
+// function toggleVisibility(divId) {
+//   if(visibleDivId === divId) {
+//     //visibleDivId = null;
+//   } else {
+//     visibleDivId = divId;
+//   }
+//   hideNonVisibleDivs();
+// }
    </script>
 </body>
 </html>
