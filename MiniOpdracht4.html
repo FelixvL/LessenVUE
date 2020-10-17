@@ -5,26 +5,60 @@
 <title>JavaScript form validation - checking all letters</title>
 </head>
 <body>
-  <!-- <input id="invoerVeld" value=""> -->
    
-   <input onclick="myFunction()" type="button" value="A">
-   <input onclick="myFunction()" type="button" value="B">
-   <input onclick="myFunction()" type="button" value="C">
-   <input onclick="myFunction()" type="button" value="D">
+   <!-- <button onclick="myFunction()">A</button>
+   <button onclick="myFunction()">B</button>
+   <button onclick="myFunction()">C</button>
+   <button onclick="myFunction()">D</button>
 
+   <div id="myDIV">
+    U heeft op knop "" geklikt.
+   </div> -->
+
+   <div class="buttons">
+    <button onclick="toggleVisibility('A');">A</button>
+    <button onclick="toggleVisibility('B');">B</button>
+    <button onclick="toggleVisibility('C');">C</button>
+    <button onclick="toggleVisibility('D');">D</button>
+  </div>
+   
+    <div id="A">I'm A</div>
+    <div id="B" style="display: none;">I'm B</div>
+    <div id="C" style="display: none;">I'm C</div>
+    <div id="D" style="display: none;">I'm D</div>
+  
    <script>
-     function myFunction () {
-         var totaal=0;
-       var jojo= document.getElementById("invoerVeld");
-       for (var x =0; x <jojo.value.length; x++) {
-         console.log(jojo.value.charAt(x));
-         if (jojo.value.charAt(x) == "e") {
-           alert ("Zit een e in")
-           totaal++;
-         }
-       }
-       alert(totaal);
-     }
+//        function myFunction() {
+//   var x = document.getElementById("myDIV");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+var divs = ["A", "B", "C", "D"];
+var visibleDivId = null;
+function toggleVisibility(divId) {
+  if(visibleDivId === divId) {
+    //visibleDivId = null;
+  } else {
+    visibleDivId = divId;
+  }
+  hideNonVisibleDivs();
+}
+function hideNonVisibleDivs() {
+  var i, divId, div;
+  for(i = 0; i < divs.length; i++) {
+    divId = divs[i];
+    div = document.getElementById(divId);
+    if(visibleDivId === divId) {
+      div.style.display = "block";
+    } else {
+      div.style.display = "none";
+    }
+  }
+}
    </script>
 </body>
 </html>

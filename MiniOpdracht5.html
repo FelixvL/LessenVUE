@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript form validation - checking all letters</title>
+</head>
+<body>
+   
+    <div class="buttons">
+        <button onclick="toggleVisibility('A');">A</button>
+        <button onclick="toggleVisibility('B');">B</button>
+        <button onclick="toggleVisibility('C');">C</button>
+        <button onclick="toggleVisibility('D');">D</button>
+      </div>
+       
+        <div id="A">U heeft op knop A geklikt.</div>
+        <div id="B" style="display: none;">U heeft op knop B geklikt.</div>
+        <div id="C" style="display: none;">U heeft op knop C geklikt.</div>
+        <div id="D" style="display: none;">U heeft op knop D geklikt.</div>
+      
+   <script>
+    var divs = ["A", "B", "C", "D"];
+var visibleDivId = null;
+function toggleVisibility(divId) {
+  if(visibleDivId === divId) {
+    //visibleDivId = null;
+  } else {
+    visibleDivId = divId;
+  }
+  hideNonVisibleDivs();
+}
+function hideNonVisibleDivs() {
+  var i, divId, div;
+  for(i = 0; i < divs.length; i++) {
+    divId = divs[i];
+    div = document.getElementById(divId);
+    if(visibleDivId === divId) {
+      div.style.display = "block";
+    } else {
+      div.style.display = "none";
+    }
+  }
+}
+   </script>
+</body>
+</html>
