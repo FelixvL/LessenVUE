@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="tabelVullen()" value="vullen">
+
+    <script>
+
+        function tabelVullen () {
+           var deTabel = document.getElementById("onzeTabel");
+           deTabel.innerHTML= "<tr><td>dit is mijn cel</td></tr>";
+           deTabel.innerHTML+= "<tr><td>dit is mijn cel</td></tr>";
+           deTabel.innerHTML+= "<tr><td>dit is mijn cel</td></tr>";
+        }
+    </script>
+
+    <table border=1 id="onzeTabel">
+        <tr>
+            <td>
+                dit is mijn cel
+            </td>
+            <td>
+                dit is mijn cel
+            </td>
+        </tr>
+        <tr>
+            <td>
+                dit is Ahmed
+            </td>
+            <td>
+                dit is Ahmed
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
