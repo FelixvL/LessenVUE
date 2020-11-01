@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="invoerVeld" value="">
+   
+   <input onclick="myFunction()" type="button" value="label">
+   <input onclick="anderKnop()" type="button" value="anderknop">
+
+    <script>
+        function myFunction () {
+            var mijnWoord = document.getElementById ("invoerVeld").value;
+            localStorage.setItem("kluisje1",mijnWoord);
+            console.log("opgeslagen");
+        }
+
+        function anderKnop () {
+            var gevonden = localStorage.getItem("kluisje1");
+            alert(gevonden);
+            console.log("anderknop");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+          .square {   background: #000000;
+                  height: 100px;
+                   width: 100px;
+                     }
+                   </style>
+                     <div class='square' id="squareColor" onclick="colorChoose()"> 
+                     </div>
+    <script>
+        var any =3;
+        function colorChoose() {
+            any++;
+            
+ var colors = 
+  ["blue","red","green","yellow","orange","cyan","purple","teal", "brown"
+  ];
+  if(any > colors.length) {
+                any=0;
+            }
+    //    var chooser = colors[Math.floor(Math.random() * colors.length)];
+     document.getElementById("squareColor").style.backgroundColor = colors[any];
+          }
+    </script>
+</body>
+</html>

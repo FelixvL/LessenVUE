@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="invoerVeld" value="">
+    <div id="uitkomst">mijnLijstje</div>
+   
+   <input onclick="opslaan()" type="button" value="opslaan">
+   <input onclick="opvragen()" type="button" value="opvragen">
+
+    <script>
+        var lijstje = [];
+        function opslaan () {
+            var boodschap = document.getElementById ("invoerVeld").value;
+            console.log(boodschap);
+            lijstje.push(boodschap);
+            var myJSON = JSON.stringify(lijstje);
+            localStorage.setItem("boodschappenlijstje", myJSON);
+            console.log(lijstje);
+            console.log(myJSON);
+        };
+        
+
+        function opvragen () {
+            console.log(localStorage.getItem("boodschappenlijstje"));
+            var newVar = JSON.parse (localStorage.getItem("boodschappenlijstje"));
+            console.log(newVar);
+
+            for (var x =0; x <newVar.length; x++) {
+                console.log("kijk hier" + newVar[x]);
+                document.getElementById("uitkomst").innerHTML+="<br>" + newVar[x];
+            }
+        }
+        /*
+        
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id=groen onclick=klikhistory(groen)> A</button>
+    <button id=blauw onclick=klikhistory(blauw)> B</button>
+    <button id=oranje onclick=klikhistory(oranje)> C</button>
+
+    <div id="uitkomst"></div>
+
+    <script>
+        var groengeklikt = 0;
+        var blauwgeklikt = 0;
+        function klikhistory(deknop) {
+            if (deknop.id === "groen") {
+                groengeklikt++;
+            }
+            if (deknop.id === "blauw") {
+                blauwgeklikt++;
+            }
+            if (deknop.id === "oranje") {
+                berekenTotaal()
+            }
+        };
+        
+        function berekenTotaal() {
+            document.getElementById("uitkomst").innerHTML = "groen" + groengeklikt +  "aantal geklikt <br>" + "blauw" + blauwgeklikt +  "aantal geklikt";
+        }
+    </script>
+</body>
+
+<style>
+   #groen {
+        color: green;
+    }
+
+    #blauw {
+        color: blue;
+    }
+
+    #oranje {
+        color: orange;
+    }
+</style>
+
+</html>
