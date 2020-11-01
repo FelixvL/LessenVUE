@@ -7,20 +7,48 @@
 </head>
 <body>
     <input type="button" onclick="objectMaken()" value="vullen">
+    <input type="button" onclick="kledingToevoegen()" value="kleding toevoegen">
+    <input type="button" onclick="lijstjeprinten()" value="alle kleren zien">
+    <div id=lijstje>hoi</div>
 
     <script>
+        var kledingkast = [];
         function objectMaken () {
             var kledingstuk1 = {};
             kledingstuk1.soort = "hemd";
             kledingstuk1.kleur = "rood";
             kledingstuk1.prijs = 200;
-            alert (kledingstuk1.kleur);
-
+        
             var kledingstuk2 = {};
             kledingstuk2.soort = "broek";
             kledingstuk2.kleur = "zwart";
             kledingstuk2.prijs = 500;
-            alert (kledingstuk2.kleur);
+            prijsverhogen(kledingstuk2);
+            prijsverhogen(kledingstuk2);
+            prijsverhogen(kledingstuk2);
+            prijsverhogen(kledingstuk1);
+            alert(kledingstuk1.prijs);
+         //   alert(kledingstuk2.prijs);
+            console.log(kledingkast);
+        }
+
+        function prijsverhogen(mijnkledingstuk){
+      //      alert("De prijs van de "+mijnkledingstuk.soort+" met de kleur"+mijnkledingstuk.kleur +"wordt duurder");
+            mijnkledingstuk.prijs += 50;
+        }
+        function kledingToevoegen(){
+            var kledingstuk = {};
+            kledingstuk.soort = "sokken";  // dynamisch maken invullen in tekstveld
+            kledingstuk.kleur = "groene";
+            kledingstuk.prijs = 150;
+            kledingkast.push(kledingstuk);
+        }
+        function lijstjeprinten(){
+            alert();
+            var dediv = document.getElementById("lijstje");
+            for(var x = 0; x < kledingkast.length; x++){
+                dediv.innerHTML += "<br> In mijn kledingkast zit een "+ kledingkast[x].soort +" !";
+            }
         }
 
     </script>
