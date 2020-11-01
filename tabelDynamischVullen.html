@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="tabelVullen()" value="vullen">
+    <input type="button" onclick="groentenErbij()" value="extraGroenten">
+    <div id="uitkomst">mijnLijstje</div>
+
+    <script>
+        var groenten = ["spruitjes", "kool", "wortelen", "prei"];
+        function tabelVullen () {
+           var deTabel = document.getElementById("onzeTabel");
+           deTabel.innerHTML= "<tr><td>dit is mijn cel</td></tr>";
+           
+           for (var x=0; x<groenten.length; x++) {
+            deTabel.innerHTML+= "<tr><td>"+groenten [x]+"</td></tr>";
+            // document.getElementById("uitkomst").innerHTML+="<br>" + groenten[x];
+           
+           }
+        }
+
+        function groentenErbij () {
+            groenten.push("boerenkool");
+
+        }
+    </script>
+
+    <table border=1 id="onzeTabel">
+        <tr>
+            <td>
+                dit is mijn cel
+            </td>
+            <td>
+                dit is mijn cel
+            </td>
+        </tr>
+        <tr>
+            <td>
+                dit is Ahmed
+            </td>
+            <td>
+                dit is Ahmed
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

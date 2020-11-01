@@ -6,35 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="button" onclick="tabelVullen()" value="vullen">
+    <input type="button" onclick="objectMaken()" value="vullen">
 
     <script>
+        function objectMaken () {
+            var kledingstuk1 = {};
+            kledingstuk1.soort = "hemd";
+            kledingstuk1.kleur = "rood";
+            kledingstuk1.prijs = 200;
+            alert (kledingstuk1.kleur);
 
-        function tabelVullen () {
-           var deTabel = document.getElementById("onzeTabel");
-           deTabel.innerHTML= "<tr><td>dit is mijn cel</td></tr>";
-           deTabel.innerHTML+= "<tr><td>dit is mijn cel</td></tr>";
-           deTabel.innerHTML+= "<tr><td>dit is mijn cel</td></tr>";
+            var kledingstuk2 = {};
+            kledingstuk2.soort = "broek";
+            kledingstuk2.kleur = "zwart";
+            kledingstuk2.prijs = 500;
+            alert (kledingstuk2.kleur);
         }
-    </script>
 
-    <table border=1 id="onzeTabel">
-        <tr>
-            <td>
-                dit is mijn cel
-            </td>
-            <td>
-                dit is mijn cel
-            </td>
-        </tr>
-        <tr>
-            <td>
-                dit is Ahmed
-            </td>
-            <td>
-                dit is Ahmed
-            </td>
-        </tr>
-    </table>
+    </script>
 </body>
 </html>
