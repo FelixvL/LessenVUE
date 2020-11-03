@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input id="invoerVeld" value="">
+    <input type="button" onclick="objectMaken()" value="vullen">
+    <input type="button" onclick="kledingToevoegen()" value="kleding toevoegen"> -->
+    <input type="button" onclick="lijstjeprinten()" value="alle kleding zien">
+
+    <div id=lijstje></div>
+    
+    <main>
+        <form onsubmit="kledingToevoegen(); return false;">
+            <ol>
+                <li>
+                    <label for="input-soort"> Soort kledingstuk</label>
+                    <input id="input-soort">
+                </li>
+                <li>
+                    <label for="input-kleur"> Kleur kledingstuk</label>
+                    <input id="input-kleur">
+                </li>
+                <li>
+                    <label for="input-prijs"> Prijs kledingstuk</label>
+                    <input id="input-prijs">
+                </li>
+                <li><button>Toevoegen kledingstuk</button></li>
+            </ol>
+        </form>
+    </main>
+
+    <script>
+
+        //  function prijsverhogen (mijnkledingstuk) {
+        //      alert ("De prijs van de "+mijnkledingstuk.soort+ "met de kleur" +mijnkledingstuk.kleur+ "wordt duurder");
+        //      mijnkledingstuk.prijs +=50;
+        //  }
+            
+            // var kledingkast= [];
+            function kledingToevoegen () {
+            var kledingstuk = [];
+            if (localStorage['kledingstuk']) {
+                kledingstuk = JSON.parse(localStorage['kledingstuk']);
+            }
+
+            var nieuwKledingstuk = {
+                soort: document.querySelector('#input-soort').value,
+                kleur: document.querySelector('#input-kleur').value,
+                prijs: document.querySelector('#input-prijs').value,  
+            };
+            console.log(nieuwKledingstuk);
+            kledingstuk.push(nieuwKledingstuk);
+
+            localStorage['kledingstuk'] = JSON.stringify(kledingstuk);
+
+         }
+
+         function lijstjeprinten () {
+            var dediv = document.getElementById("lijstje");
+            for (var x=0; x<kledingkast.length; x++) {
+                dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[kledingkast] +" !";
+            }
+            
+         }
+    </script>
+</body>
+</html>
