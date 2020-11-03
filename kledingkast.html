@@ -40,7 +40,7 @@
         //      mijnkledingstuk.prijs +=50;
         //  }
             
-            // var kledingkast= [];
+            var kledingkast= [];
             function kledingToevoegen () {
             var kledingstuk = [];
             if (localStorage['kledingstuk']) {
@@ -57,12 +57,14 @@
 
             localStorage['kledingstuk'] = JSON.stringify(kledingstuk);
 
+            kledingkast.push(nieuwKledingstuk);
+
          }
 
          function lijstjeprinten () {
             var dediv = document.getElementById("lijstje");
             for (var x=0; x<kledingkast.length; x++) {
-                dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[kledingkast] +" !";
+                dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x] +" !";
             }
             
          }
