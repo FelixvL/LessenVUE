@@ -33,22 +33,6 @@
         </form>
         <!-- <div id=lijstje></div> -->
         <table border=1 id="lijstje">
-            <tr>
-                <td>
-                    dit is mijn cel
-                </td>
-                <td>
-                    dit is mijn cel
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    dit is Ahmed
-                </td>
-                <td>
-                    dit is Ahmed
-                </td>
-            </tr>
         </table>
     </main>
 
@@ -80,15 +64,13 @@
 
             kledingkast.push(nieuwKledingstuk);
 
-            nieuwKledingstuk.innerHTML= "<tr><td>hallo</td></tr>";
-
          }
 
          function lijstjeprinten () {
             var dediv = document.getElementById("lijstje");
             for (var x=0; x<kledingkast.length; x++) {
                 // dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x].soort +" !";
-                dediv.innerHTML += "<tr><td>" + kledingkast[x].soort +"</td></tr>";
+                dediv.innerHTML += "<tr><td>" + kledingkast[x].soort +"</td></tr>" + "<tr><td>" + kledingkast[x].kleur +"</td></tr>" + "<tr><td>" + kledingkast[x].prijs +"</td></tr>";
             }
             
          }
