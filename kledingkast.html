@@ -9,9 +9,8 @@
     <!-- <input id="invoerVeld" value="">
     <input type="button" onclick="objectMaken()" value="vullen">
     <input type="button" onclick="kledingToevoegen()" value="kleding toevoegen"> -->
-    <input type="button" onclick="lijstjeprinten()" value="alle kleding zien">
+    <!-- <input type="button" onclick="lijstjeprinten()" value="alle kleding zien"> -->
 
-    <div id=lijstje></div>
     
     <main>
         <form onsubmit="kledingToevoegen(); return false;">
@@ -29,9 +28,31 @@
                     <input id="input-prijs">
                 </li>
                 <li><button>Toevoegen kledingstuk</button></li>
+                <li><input type="button" onclick="lijstjeprinten()" value="alle kleding zien"> </li>
             </ol>
         </form>
+        <!-- <div id=lijstje></div> -->
+        <table border=1 id="lijstje">
+            <tr>
+                <td>
+                    dit is mijn cel
+                </td>
+                <td>
+                    dit is mijn cel
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    dit is Ahmed
+                </td>
+                <td>
+                    dit is Ahmed
+                </td>
+            </tr>
+        </table>
     </main>
+
+   
 
     <script>
 
@@ -59,12 +80,15 @@
 
             kledingkast.push(nieuwKledingstuk);
 
+            nieuwKledingstuk.innerHTML= "<tr><td>hallo</td></tr>";
+
          }
 
          function lijstjeprinten () {
             var dediv = document.getElementById("lijstje");
             for (var x=0; x<kledingkast.length; x++) {
-                dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x].soort +" !";
+                // dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x].soort +" !";
+                dediv.innerHTML += "<tr><td>" + kledingkast[x].soort +"</td></tr>";
             }
             
          }
