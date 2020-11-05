@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>  
+    <h1>Mijn kledingkast</h1>
     <main>
+        <h2>Toevoegen kledingstuk</h2>
         <form onsubmit="kledingToevoegen(); return false;">
             <ol>
                 <li>
@@ -28,6 +30,7 @@
         <table border=1 id="lijstje">
         </table>
     </main>
+
 
    
 
@@ -63,10 +66,54 @@
             var dediv = document.getElementById("lijstje");
             for (var x=0; x<kledingkast.length; x++) {
                 // dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x].soort +" !";
-                dediv.innerHTML += "<tr><td>" + kledingkast[x].soort +"</td>" + "<td>" + kledingkast[x].kleur +"</td>" + "<td>" + kledingkast[x].prijs +"</td></tr>";
+                dediv.innerHTML += "<th>soort kleding</th><th>kleur kleding</th><th>prijs kleding</th><tr><td>" + kledingkast[x].soort +"</td>" + "<td>" + kledingkast[x].kleur +"</td>" + "<td>" + kledingkast[x].prijs +"</td></tr>";
             }
             
          }
     </script>
 </body>
 </html>
+<style>
+    body {
+        margin: 0;
+        font-family: "Trebuchet MS", sans-serif;
+        background: black;
+        color: silver;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: x-large;
+        text-align: left;
+        padding: 40px 10px 0;
+        margin: 0 0 80px 0;
+        color: white;
+    }
+
+    h2 {
+        background: #555;
+        padding: 10px;
+        margin: 10px 0;
+        font-weight: bold;
+        font-size: 1,2em;
+        font-variant: small-caps;
+        color: white;
+    }
+
+    form li {
+        display: flex;
+        padding: 5px 10px;
+    }
+
+    form label {
+        text-align: right;
+        width: 140px;
+        padding: 12px;
+        color: white;
+    }
+
+    button {
+        display: block;
+        margin-left: 164px;
+    }
+</style>
