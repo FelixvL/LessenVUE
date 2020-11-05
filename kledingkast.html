@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>  
+
+<body>
     <h1>Mijn kledingkast</h1>
     <main>
         <h2>Toevoegen kledingstuk</h2>
@@ -29,20 +31,23 @@
         </form>
         <table border=1 id="lijstje">
         </table>
+        <button onclick="removeRow()">Delete</button>
     </main>
 
 
-   
+
 
     <script>
+
+
 
         //  function prijsverhogen (mijnkledingstuk) {
         //      alert ("De prijs van de "+mijnkledingstuk.soort+ "met de kleur" +mijnkledingstuk.kleur+ "wordt duurder");
         //      mijnkledingstuk.prijs +=50;
         //  }
-            
-            var kledingkast= [];
-            function kledingToevoegen () {
+
+        var kledingkast = [];
+        function kledingToevoegen() {
             var kledingstuk = [];
             if (localStorage['kledingstuk']) {
                 kledingstuk = JSON.parse(localStorage['kledingstuk']);
@@ -51,7 +56,7 @@
             var nieuwKledingstuk = {
                 soort: document.querySelector('#input-soort').value,
                 kleur: document.querySelector('#input-kleur').value,
-                prijs: document.querySelector('#input-prijs').value,  
+                prijs: document.querySelector('#input-prijs').value,
             };
             console.log(nieuwKledingstuk);
             kledingstuk.push(nieuwKledingstuk);
@@ -60,18 +65,26 @@
 
             kledingkast.push(nieuwKledingstuk);
 
-         }
+        }
 
-         function lijstjeprinten () {
+        function lijstjeprinten() {
             var dediv = document.getElementById("lijstje");
-            for (var x=0; x<kledingkast.length; x++) {
+            for (var x = 0; x < kledingkast.length; x++) {
                 // dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x].soort +" !";
-                dediv.innerHTML += "<th>soort kleding</th><th>kleur kleding</th><th>prijs kleding</th><tr><td>" + kledingkast[x].soort +"</td>" + "<td>" + kledingkast[x].kleur +"</td>" + "<td>" + kledingkast[x].prijs +"</td></tr>";
+                dediv.innerHTML +=
+                    "<th>soort kleding<th>kleur kleding<th>prijs kleding<tr><td>" + kledingkast[x].soort + "</td>" +
+                    "<td>" + kledingkast[x].kleur + "</td>" +
+                    "<td>" + kledingkast[x].prijs + "</th></td></tr>";
             }
-            
-         }
+
+        }
+
+        function removeRow() {
+            document.getElementById("lijstje").deleteRow(0);
+        }
     </script>
 </body>
+
 </html>
 <style>
     body {
@@ -95,7 +108,7 @@
         padding: 10px;
         margin: 10px 0;
         font-weight: bold;
-        font-size: 1,2em;
+        font-size: 1, 2em;
         font-variant: small-caps;
         color: white;
     }
