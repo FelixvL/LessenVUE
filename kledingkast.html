@@ -29,9 +29,19 @@
                 <li><input type="button" onclick="lijstjeprinten()" value="alle kleding zien"> </li>
             </ol>
         </form>
+       
+        <table border=1 id="lijstje">
+            <tr>
+                <th>soort</th>
+                <th>kleur</th>
+                <th>prijs</th>
+            </tr>
+        </table>
+
         <!-- <table border=1 id="lijstje">
         </table> -->
-        <table id="lijstje">
+
+        <!-- <table id="lijstje">
             <tr>
                 <td>Row 1</td>
                 <td>
@@ -50,8 +60,8 @@
                     <input type="button" value="Delete" onclick="deleteRow(this)">
                 </td>
             </tr>
-        </table>
-        <!-- <button onclick="removeRow()">Delete</button> -->
+        </table> -->
+        <button onclick="removeRow()">Delete</button>
     </main>
 
 
@@ -92,24 +102,31 @@
             for (var x = 0; x < kledingkast.length; x++) {
                 // dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x].soort +" !";
                 dediv.innerHTML +=
-                    "<th>soort kleding<th>kleur kleding<th>prijs kleding<tr><td>" + kledingkast[x].soort + "</td>" +
+                    // "<th>soort kleding<th>kleur kleding<th>prijs kleding<tr><td>" + kledingkast[x].soort + "</td>" +
+                    // "<td>" + kledingkast[x].kleur + "</td>" +
+                    // "<td>" + kledingkast[x].prijs + "</th></td></tr>";
+                    "<th><tr><td>" + kledingkast[x].soort + "</td>" +
                     "<td>" + kledingkast[x].kleur + "</td>" +
                     "<td>" + kledingkast[x].prijs + "</th></td></tr>";
             }
 
         }
 
-        
-        function deleteRow(r) {
-            var i = r.parentNode.parentNode.rowIndex;
-            document.getElementById("lijstje").deleteRow(i);
+        function removeRow () {
+            document.getElementById ("lijstje").innerHTML = "";
+            kledingkast.splice(2,1);
+            lijstjeprinten();
+
         }
 
-        // function removeRow () {
-        //     document.getElementById ("lijstje").innerHTML = "";
-        //     kledingkast.splice(2,1);
-        //     lijstjeprinten();
+        
+        // function deleteRow(r) {
+        //     var i = r.parentNode.parentNode.rowIndex;
+        //     document.getElementById("lijstje").deleteRow(i);
+        // }
 
+        // function DeleteData() {
+        // localStorage.clear();
         // }
 
         // function removeRow() {
