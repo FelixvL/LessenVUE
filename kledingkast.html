@@ -10,8 +10,8 @@
 <body>
     <h1>Mijn kledingkast</h1>
     <main>
-        <h2>Toevoegen kledingstuk</h2>
-        <form onsubmit="kledingToevoegen(); return false;">
+        <div id="mijnform">
+            <h2>Toevoegen kledingstuk</h2>
             <ol>
                 <li>
                     <label for="input-soort"> Soort kledingstuk</label>
@@ -25,11 +25,10 @@
                     <label for="input-prijs"> Prijs kledingstuk</label>
                     <input id="input-prijs">
                 </li>
-                <li><button>Toevoegen kledingstuk</button></li>
+                <li><button onclick=kledingToevoegen()>Toevoegen kledingstuk</button></li>
                 <li><input type="button" onclick="lijstjeprinten()" value="alle kleding zien"> </li>
             </ol>
-        </form>
-       
+        </div>
         <table border=1 id="lijstje">
             <tr>
                 <th>soort</th>
@@ -37,101 +36,46 @@
                 <th>prijs</th>
             </tr>
         </table>
-
-        <!-- <table border=1 id="lijstje">
-        </table> -->
-
-        <!-- <table id="lijstje">
-            <tr>
-                <td>Row 1</td>
-                <td>
-                    <input type="button" value="Delete" onclick="deleteRow(this)">
-                </td>
-            </tr>
-            <tr>
-                <td>Row 2</td>
-                <td>
-                    <input type="button" value="Delete" onclick="deleteRow(this)">
-                </td>
-            </tr>
-            <tr>
-                <td>Row 3</td>
-                <td>
-                    <input type="button" value="Delete" onclick="deleteRow(this)">
-                </td>
-            </tr>
-        </table> -->
-        <button onclick="removeRow()">Delete</button>
     </main>
-
-
-
-
     <script>
-
-
-
-        //  function prijsverhogen (mijnkledingstuk) {
-        //      alert ("De prijs van de "+mijnkledingstuk.soort+ "met de kleur" +mijnkledingstuk.kleur+ "wordt duurder");
-        //      mijnkledingstuk.prijs +=50;
-        //  }
-
         var kledingkast = [];
-        function kledingToevoegen() {
-            var kledingstuk = [];
-            if (localStorage['kledingstuk']) {
-                kledingstuk = JSON.parse(localStorage['kledingstuk']);
-            }
 
+        window.onload = function () {
+            if (localStorage['felixtrial']) {
+                kledingkast = JSON.parse(localStorage.getItem("felixtrial"));
+            }
+        }
+        function kledingToevoegen() {
             var nieuwKledingstuk = {
                 soort: document.querySelector('#input-soort').value,
                 kleur: document.querySelector('#input-kleur').value,
                 prijs: document.querySelector('#input-prijs').value,
             };
-            console.log(nieuwKledingstuk);
-            kledingstuk.push(nieuwKledingstuk);
-
-            localStorage['kledingstuk'] = JSON.stringify(kledingstuk);
-
             kledingkast.push(nieuwKledingstuk);
-
+            localStorage.setItem("felixtrial", JSON.stringify(kledingkast));
         }
 
         function lijstjeprinten() {
             var dediv = document.getElementById("lijstje");
+            dediv.innerHTML = "<tr><th>soort</th><th>kleur</th><th>prijs</th></tr>";
             for (var x = 0; x < kledingkast.length; x++) {
-                // dediv.innerHTML += "<br> In mijn kledingkast zit een " + kledingkast[x].soort +" !";
                 dediv.innerHTML +=
-                    // "<th>soort kleding<th>kleur kleding<th>prijs kleding<tr><td>" + kledingkast[x].soort + "</td>" +
-                    // "<td>" + kledingkast[x].kleur + "</td>" +
-                    // "<td>" + kledingkast[x].prijs + "</th></td></tr>";
-                    "<th><tr><td>" + kledingkast[x].soort + "</td>" +
+                    "<tr><td>" + kledingkast[x].soort + "</td>" +
                     "<td>" + kledingkast[x].kleur + "</td>" +
-                    "<td>" + kledingkast[x].prijs + "</th></td></tr>";
+                    "<td>" + kledingkast[x].prijs + "</td><td><button onclick=removeRow(" + x + ") >delete</button><button onclick=editRow(" + x + ") >edit</button></td></tr>";
             }
-
         }
-
-        function removeRow () {
-            document.getElementById ("lijstje").innerHTML = "";
-            kledingkast.splice(2,1);
+        function removeRow(variabele) {
+            kledingkast.splice(variabele, 1);
+            localStorage.setItem("felixtrial", JSON.stringify(kledingkast));
             lijstjeprinten();
-
         }
 
-        
-        // function deleteRow(r) {
-        //     var i = r.parentNode.parentNode.rowIndex;
-        //     document.getElementById("lijstje").deleteRow(i);
-        // }
-
-        // function DeleteData() {
-        // localStorage.clear();
-        // }
-
-        // function removeRow() {
-        //     document.getElementById("lijstje").deleteRow(1);
-        // }
+        function editRow() {
+            var x = document.getElementById('lijstje').rows
+            var y = x[0].cells
+            y[0].innerHTML = "NEW CONTENT"
+        }
     </script>
 </body>
 
@@ -163,12 +107,12 @@
         color: white;
     }
 
-    form li {
+    #mijnform li {
         display: flex;
         padding: 5px 10px;
     }
 
-    form label {
+    #mijnform label {
         text-align: right;
         width: 140px;
         padding: 12px;
