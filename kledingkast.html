@@ -72,22 +72,11 @@
         }
 
         function editRow(variabele) {
-            var soort = document.getElementById('#input-soort').value;
-            kleur = document.getElementById('#input-kleur').value;
-            prijs = document.querySelector('#input-prijs').value;
-
-            table.rows[rIndex].cells[0].innerHTML = soort;
-            table.rows[rIndex].cells[1].innerHTML = kleur;
-            table.rows[rIndex].cells[2].innerHTML = prijs;
+            var kledingstuk = kledingkast [variabele];
+            document.getElementById('input-soort').value = kledingstuk.soort;
+            document.getElementById('input-kleur').value = kledingstuk.kleur;
+            document.getElementById('input-prijs').value = kledingstuk.prijs;
         }
-
-        // function editRow() {
-        //     var x = document.getElementById('lijstje').rows
-        //     var y = x[0].cells
-        //     y[0].innerHTML = "NEW CONTENT"
-        // }
-
-
     </script>
 </body>
 
