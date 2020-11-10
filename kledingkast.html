@@ -71,11 +71,23 @@
             lijstjeprinten();
         }
 
-        function editRow() {
-            var x = document.getElementById('lijstje').rows
-            var y = x[0].cells
-            y[0].innerHTML = "NEW CONTENT"
+        function editRow(variabele) {
+            var soort = document.getElementById('#input-soort').value;
+            kleur = document.getElementById('#input-kleur').value;
+            prijs = document.querySelector('#input-prijs').value;
+
+            table.rows[rIndex].cells[0].innerHTML = soort;
+            table.rows[rIndex].cells[1].innerHTML = kleur;
+            table.rows[rIndex].cells[2].innerHTML = prijs;
         }
+
+        // function editRow() {
+        //     var x = document.getElementById('lijstje').rows
+        //     var y = x[0].cells
+        //     y[0].innerHTML = "NEW CONTENT"
+        // }
+
+
     </script>
 </body>
 
