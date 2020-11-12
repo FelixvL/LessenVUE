@@ -10,7 +10,6 @@
 <body>
     <input id="invoerVeld" value="">
     <input type="button" onclick="hoeveel()" value="vullen">
-    <input type="button" onclick="myFunction()" value="aantal">
     <div id="uitkomst">mijnLijstje</div>
 
 
@@ -18,30 +17,16 @@
         var kledingKast = ["sokken", "jas", "sokken", "trui"];
         function hoeveel() {
             alert(invoerVeld.value);
+            var count = 0;
             for (var x = 0; x < kledingKast.length; x++) {
+                if (kledingKast[x] === invoerVeld.value) {
+                    count++;
+                }
                 alert(kledingKast[x] == invoerVeld.value);
             }
+            console.log(count);
         }   
-        
-        function myFunction() {
-            var aantallen = ["hemd", "hemd", "hemd", "jeans"];
-            document.getElementById("invoerVeld").innerHTML = aantallen.length;
-            alert(aantallen.length);
-        }
     </script>
 </body>
 
 </html>
-
-<!-- var totaal = [];
-function knoppencheck (afzender) {
-    alert (afzender.id);
-    if(afzender.id == "knop3") {
-        alert("U heeft op C geklikt");
-    }else{
-        alert("nee");
-    }
-    totaal.push("string");
-    var elem = document.getElementById("uitkomst");
-    // elem.innerHTML = totaal.length;
-} -->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input id="invoerVeld" value=""> -->
+    <button onclick="kledingKast()">uitgaven</button>
+    <div id=uitkomst>Uitkomst</div>
+
+
+    <script>
+
+        var kledingKast = [25, 55, 48, 122];
+
+        var sum = kledingKast.reduce(function (a, b) {
+            return a + b;
+        }, 0);
+
+        console.log(sum);
+        document.getElementById("uitkomst").innerHTML = sum;
+
+        // var kledingKast = [25, 55, 48, 122];
+        // function hoeveel() {
+        //     for (var x = 0; x < kledingKast.length; x++) {
+        //      document.getElementById("uitkomst").innerHTML += "<button>"+x + "</button>"  
+        // }   
+
+        // function actieInDeTent() {
+
+        //     var kledingKast = [25, 55, 48, 122];
+        //     console.log(kledingKast);
+        //     document.getElementById("uitkomst").innerHTML = kledingKast.length;
+
+        // }
+        // function nieuweActieInDeTent() {
+        //     for (i = 1; i < 10; i++) {
+        //         document.getElementById("uitkomst").innerHTML += "<button>" + i + "</button>";
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
