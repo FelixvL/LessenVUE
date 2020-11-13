@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="gemiddeld()">kledingkast uitgaven gemiddeld</button>
+    <div id=uitkomst>Uitkomst</div>
+
+
+    <script>
+
+        function gemiddeld() {
+            var aantalKledingStukken = [25, 55, 48, 122];
+            var sum = aantalKledingStukken.reduce((sum, val) => (sum += val));
+            var len = aantalKledingStukken.length;
+
+            console.log("average: ", sum / len);
+            document.getElementById("uitkomst").innerHTML += "<br>" + sum / len;
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!-- const grades = [80, 77, 88, 95, 68];
+
+function getAvg(grades) {
+  const total = grades.reduce((acc, c) => acc + c, 0);
+  return total / grades.length;
+}
+
+const average = getAvg(grades);
+console.log(average); -->
+
+
+
+<!-- let values = [2, 56, 3, 41, 0, 4, 100, 23];
+let count = values.length;
+values = values.reduce((previous, current) => current += previous);
+values /= count; -->
