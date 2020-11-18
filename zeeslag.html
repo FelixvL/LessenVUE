@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Zeeslag
+    <br>
+
+    <div class="square" id=blokje0 onclick="colorchoose('0')"></div> <!-- view -->
+    <div class="square" id=blokje1 onclick="colorchoose('1')"></div>
+    <div class="square" id=blokje2 onclick="colorchoose('2')"></div>
+    <div class="square" id=blokje3 onclick="colorchoose('3')"></div> <!-- view -->
+    <div class="square" id=blokje4 onclick="colorchoose('4')"></div>
+    <div class="square" id=blokje5 onclick="colorchoose('5')"></div>
+    <div class="square" id=blokje6 onclick="colorchoose('6')"></div> <!-- view -->
+    <div class="square" id=blokje7 onclick="colorchoose('7')"></div>
+    <div class="square" id=blokje8 onclick="colorchoose('8')"></div>
+    <br><br><br><br>
+    <hr><br>
+    <hr>
+    <label>Aantal keer geschoten:</label>
+    <span id="output">0</span>
+    <hr>
+    <br>
+    <!-- <div id=debug>test</div> -->
+    <script>
+        // je hebt drie pogingen ALS je pogingen op nul staan dan ben je af. Iedere keer mis, is een punt eraf
+        // als je alle boten hebt geraakt dan heb je gewonnen, dat zegt het spel ook
+        // Als je hebt gewonnen, komt er een winnaars plaatje
+        // Als je gewonnen hebt, dan klinkt er een winnaars liedje
+        // Als je een tweede keer op een locatie schiet, dan zegt hij, DAT KAN NIET
+        var kleur = 'blue';   // DRY
+        var anderekleur = 'red';
+        var zee = [0, 0, 1, 1, 0, 0, 0, 1, 1]; // model
+        function colorchoose(hetblokjenummer) {  // 2
+            var mijnblokje = document.getElementById("blokje" + hetblokjenummer);   // blokje2
+            if (zee[hetblokjenummer] == 0) {
+                mijnblokje.style.backgroundColor = kleur;
+            } else {
+                mijnblokje.style.backgroundColor = anderekleur;
+            }
+            document.getElementById("output").innerHTML = i;
+            clickCounter();
+        }
+        // function fc(info) {
+        //     document.getElementById("debug").innerHTML += "<br>" + info;
+        // }
+
+        var i = 0
+        function clickCounter(hetblokjenummer) {
+            document.getElementById("blokje" + hetblokjenummer).innerHTML = i++ + 1;
+            if (i < 3) {
+                document.getElementById("blokje" + hetblokjenummer) = "Game over";
+
+            }else {
+                document.getElementById("blokje" + hetblokjenummer) = "I dont know";
+            }
+        }
+
+        // function myFunction() {
+        //     var x = new x;
+        //     if (x < 3) {
+        //         document.getElementById("demo").innerHTML = "Game Over";
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
+<style>
+    .square {
+        display: inline-block;
+        background-color: gray;
+        height: 100px;
+        width: 100px;
+    }
+</style>
