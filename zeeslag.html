@@ -25,6 +25,7 @@
     <hr>
     <label>Aantal keer geschoten:</label>
     <span id="output">0</span>
+    Punten:<span id="output2">0</span>
     <hr>
     <br>
     <!-- <div id=debug>test</div> -->
@@ -36,7 +37,7 @@
         // Als je een tweede keer op een locatie schiet, dan zegt hij, DAT KAN NIET
         var kleur = 'blue';   // DRY
         var anderekleur = 'red';
-        var counter = document.getElementById("blokje" + hetblokjenummer);
+        var counter = document.getElementById("output2");
         var count = 0;
         var zee = [0, 0, 1, 1, 0, 0, 0, 1, 1]; // model
         function colorchoose(hetblokjenummer) {  // 2
