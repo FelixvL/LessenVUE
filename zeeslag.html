@@ -36,13 +36,19 @@
         // Als je een tweede keer op een locatie schiet, dan zegt hij, DAT KAN NIET
         var kleur = 'blue';   // DRY
         var anderekleur = 'red';
+        var counter = document.getElementById("blokje" + hetblokjenummer);
+        var count = 0;
         var zee = [0, 0, 1, 1, 0, 0, 0, 1, 1]; // model
         function colorchoose(hetblokjenummer) {  // 2
             var mijnblokje = document.getElementById("blokje" + hetblokjenummer);   // blokje2
             if (zee[hetblokjenummer] == 0) {
                 mijnblokje.style.backgroundColor = kleur;
+                count = count + 1;
+                counter.innerHTML = count;
             } else {
                 mijnblokje.style.backgroundColor = anderekleur;
+                count = count - 1;
+                counter.innerHTML = count;
             }
             document.getElementById("output").innerHTML = i;
             clickCounter();
@@ -57,7 +63,7 @@
             if (i < 3) {
                 document.getElementById("blokje" + hetblokjenummer) = "Game over";
 
-            }else {
+            } else {
                 document.getElementById("blokje" + hetblokjenummer) = "I dont know";
             }
         }
