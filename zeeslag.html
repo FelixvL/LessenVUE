@@ -58,23 +58,26 @@
         //     document.getElementById("debug").innerHTML += "<br>" + info;
         // }
 
-        var i = 0
-        function clickCounter(hetblokjenummer) {
-            document.getElementById("blokje" + hetblokjenummer).innerHTML = i++ + 1;
-            if (i < 3) {
-                document.getElementById("blokje" + hetblokjenummer) = "Game over";
+        // var i = 0
+        // function clickCounter(hetblokjenummer) {
+        //     document.getElementById("blokje" + hetblokjenummer).innerHTML = i++ + 1;
+        //     if (i < 3) {
+        //         document.getElementById("blokje" + hetblokjenummer) = "Game over";
 
-            } else {
-                document.getElementById("blokje" + hetblokjenummer) = "I dont know";
-            }
-        }
-
-        // function myFunction() {
-        //     var x = new x;
-        //     if (x < 3) {
-        //         document.getElementById("demo").innerHTML = "Game Over";
+        //     } else {
+        //         document.getElementById("blokje" + hetblokjenummer) = "I dont know";
         //     }
         // }
+
+            var i = 0
+            function clickCounter () {
+                i++;
+                if (i < 3) {
+                    alert ("je mag nog");
+                }else {
+                    alert ("kogels op");
+                }
+            }
     </script>
 </body>
 
