@@ -10,16 +10,17 @@
 <body>
     Zeeslag
     <br>
+    "(new myFunction1()).colorchoose();
 
-    <div class="square" id=blokje0 onclick="colorchoose('0')"></div> <!-- view -->
-    <div class="square" id=blokje1 onclick="colorchoose('1')"></div>
-    <div class="square" id=blokje2 onclick="colorchoose('2')"></div>
-    <div class="square" id=blokje3 onclick="colorchoose('3')"></div> <!-- view -->
-    <div class="square" id=blokje4 onclick="colorchoose('4')"></div>
-    <div class="square" id=blokje5 onclick="colorchoose('5')"></div>
-    <div class="square" id=blokje6 onclick="colorchoose('6')"></div> <!-- view -->
-    <div class="square" id=blokje7 onclick="colorchoose('7')"></div>
-    <div class="square" id=blokje8 onclick="colorchoose('8')"></div>
+    <div class="square" id=blokje0 onclick="(new myFunction1()).colorchoose('0')"></div> <!-- view -->
+    <div class="square" id=blokje1 onclick="(new myFunction1()).colorchoose('1')"></div>
+    <div class="square" id=blokje2 onclick="(new myFunction1()).colorchoose('2')"></div>
+    <div class="square" id=blokje3 onclick="(new myFunction1()).colorchoose('3')"></div> <!-- view -->
+    <div class="square" id=blokje4 onclick="(new myFunction1()).colorchoose('4')"></div>
+    <div class="square" id=blokje5 onclick="(new myFunction1()).colorchoose('5')"></div>
+    <div class="square" id=blokje6 onclick="(new myFunction1()).colorchoose('6')"></div> <!-- view -->
+    <div class="square" id=blokje7 onclick="(new myFunction1()).colorchoose('7')"></div>
+    <div class="square" id=blokje8 onclick="(new myFunction1()).colorchoose('8')"></div>
     <br><br><br><br>
     <hr><br>
     <hr>
@@ -53,9 +54,8 @@
             }
             document.getElementById("output").innerHTML = i;
             clickCounter();
-            document.getElementById("output").innerHTML = win;
-            myFunction1();
-
+            // myFunction1();
+            // document.getElementById("output").innerHTML = win;
         }
         // function fc(info) {
         //     document.getElementById("debug").innerHTML += "<br>" + info;
@@ -83,7 +83,8 @@
         }
 
         var win = 0;
-        function myFunction1() {
+        function myFunction1() { 
+        this.colorchoose =  function () {
             if (count == 3) {
                 alert("You win");
             } else {
