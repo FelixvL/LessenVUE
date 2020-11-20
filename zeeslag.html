@@ -53,6 +53,9 @@
             }
             document.getElementById("output").innerHTML = i;
             clickCounter();
+            document.getElementById("output").innerHTML = win;
+            myFunction1();
+
         }
         // function fc(info) {
         //     document.getElementById("debug").innerHTML += "<br>" + info;
@@ -69,15 +72,25 @@
         //     }
         // }
 
-            var i = 0
-            function clickCounter () {
-                i++;
-                if (i < 3) {
-                    alert ("je mag nog");
-                }else {
-                    alert ("kogels op");
-                }
+        var i = 0
+        function clickCounter() {
+            i++;
+            if (i < 3) {
+                alert("je mag nog");
+            } else {
+                alert("kogels op");
             }
+        }
+
+        var win = 0;
+        function myFunction1() {
+            if (count == 3) {
+                alert("You win");
+            } else {
+                alert("You lose");
+            }
+
+
     </script>
 </body>
 
