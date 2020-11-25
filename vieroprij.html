@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 2px solid black;
+            color :white;
+        }
+    </style>
+    <script>        
+        var speelveld = [
+            [0, 0] ,       // index 0
+            [0, 0]          // index 1
+        ];
+        function werpsteen(hokjecode){
+            speelveld[1][hokjecode[1]] = 1;
+            speelbordTekenen();
+          //  speelveld[hokjecode] = 1;
+        }
+        function speelbordTekenen(){
+            for(var x = 0; x < speelveld.length; x++){  
+                for(var y = 0; y < speelveld[x].length; y++){
+                    if(speelveld[x][y] == 0){
+                        document.getElementById("hokje"+x+""+y).style.backgroundColor = 'blue';
+                    }else{
+                        document.getElementById("hokje"+x+""+y).style.backgroundColor = 'black';
+                    }
+                }    
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="hokje00" onclick="werpsteen('00')">00</div>
+    <div id="hokje01" onclick="werpsteen('01')">01</div>
+    <br>
+    <div id="hokje10" onclick="werpsteen('10')">10</div>
+    <div id="hokje11" onclick="werpsteen('11')">11</div>
+</body>
+</html>
+

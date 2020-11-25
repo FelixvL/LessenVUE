@@ -11,15 +11,15 @@
     Zeeslag
     <br>
 
-    <div class="square" id=blokje0 onclick="(new myFunction1()).colorchoose('0')"></div> <!-- view -->
-    <div class="square" id=blokje1 onclick="(new myFunction1()).colorchoose('1')"></div>
-    <div class="square" id=blokje2 onclick="(new myFunction1()).colorchoose('2')"></div>
-    <div class="square" id=blokje3 onclick="(new myFunction1()).colorchoose('3')"></div> <!-- view -->
-    <div class="square" id=blokje4 onclick="(new myFunction1()).colorchoose('4')"></div>
-    <div class="square" id=blokje5 onclick="(new myFunction1()).colorchoose('5')"></div>
-    <div class="square" id=blokje6 onclick="(new myFunction1()).colorchoose('6')"></div> <!-- view -->
-    <div class="square" id=blokje7 onclick="(new myFunction1()).colorchoose('7')"></div>
-    <div class="square" id=blokje8 onclick="(new myFunction1()).colorchoose('8')"></div>
+    <div class="square" id=blokje0 onclick="colorchoose('0')"></div> <!-- view -->
+    <div class="square" id=blokje1 onclick="colorchoose('1')"></div>
+    <div class="square" id=blokje2 onclick="colorchoose('2')"></div>
+    <div class="square" id=blokje3 onclick="colorchoose('3')"></div> <!-- view -->
+    <div class="square" id=blokje4 onclick="colorchoose('4')"></div>
+    <div class="square" id=blokje5 onclick="colorchoose('5')"></div>
+    <div class="square" id=blokje6 onclick="colorchoose('6')"></div> <!-- view -->
+    <div class="square" id=blokje7 onclick="colorchoose('7')"></div>
+    <div class="square" id=blokje8 onclick="colorchoose('8')"></div>
     <br><br><br><br>
     <hr><br>
     <hr>
@@ -28,6 +28,9 @@
     Punten:<span id="output2">0</span>
     <hr>
     <br>
+    <hr>
+    <br>
+    <img id="myImage" src="https://www.ultraboardgames.com/battleship/nl/gfx/oceangrid.jpg" style="width:400px">
     <!-- <div id=debug>test</div> -->
     <script>
         // je hebt drie pogingen ALS je pogingen op nul staan dan ben je af. Iedere keer mis, is een punt eraf
@@ -43,32 +46,21 @@
         function colorchoose(hetblokjenummer) {  // 2
             var mijnblokje = document.getElementById("blokje" + hetblokjenummer);   // blokje2
             if (zee[hetblokjenummer] == 0) {
-                mijnblokje.style.backgroundColor = kleur;
+                mijnblokje.style.backgroundColor = kleur;  //BLOK1
                 count = count + 1;
-                counter.innerHTML = count;
-            } else {
+            } else {                                     //BLOK2
                 mijnblokje.style.backgroundColor = anderekleur;
                 count = count - 1;
-                counter.innerHTML = count;
             }
-            document.getElementById("output").innerHTML = i;
+              //BLOK3
             clickCounter();
-            // myFunction1();
-            // document.getElementById("output").innerHTML = win;
+            myFunction1();
+            counter.innerHTML = count;
+            document.getElementById("output").innerHTML = i;
+            // document.getElementById("output2").innerHTML = count; // wat hier staat is hetzelfde als counter.innterHTML = count
         }
         // function fc(info) {
         //     document.getElementById("debug").innerHTML += "<br>" + info;
-        // }
-
-        // var i = 0
-        // function clickCounter(hetblokjenummer) {
-        //     document.getElementById("blokje" + hetblokjenummer).innerHTML = i++ + 1;
-        //     if (i < 3) {
-        //         document.getElementById("blokje" + hetblokjenummer) = "Game over";
-
-        //     } else {
-        //         document.getElementById("blokje" + hetblokjenummer) = "I dont know";
-        //     }
         // }
 
         var i = 0
@@ -82,14 +74,16 @@
         }
 
         var win = 0;
-        function myFunction1() { 
-        this.colorchoose =  function () {
-            if (count == 3) {
+        function myFunction1() {
+            if ( count == 3) {
                 alert("You win");
-            } else {
+                document.getElementById('myImage').src='a.jpg';
+            } else if (count !==3 & i==3)
+            {
                 alert("You lose");
+                document.getElementById('myImage').src='b.jpg';
             }
-
+        }
 
     </script>
 </body>

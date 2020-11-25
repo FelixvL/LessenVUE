@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="square" id=blokje0 onclick="bootraak('0')"></div>
+    <div class="square" id=blokje1 onclick="bootraak('1')"></div>
+    <div class="square" id=blokje2 onclick="bootraak('2')"></div>
+    <div class="square" id=blokje3 onclick="bootraak('3')"></div>
+    <div class="square" id=blokje4 onclick="bootraak('4')"></div>
+    <div class="square" id=blokje5 onclick="bootraak('5')"></div>
+    <div class="square" id=blokje6 onclick="bootraak('6')"></div>
+    <div class="square" id=blokje7 onclick="bootraak('7')"></div>
+    <div class="square" id=blokje8 onclick="bootraak('8')"></div>
+    <hr>
+    <label>Aantal schietpogingen:</label>
+    <span id="output">0</span>
+    Punten:<span id="output2">0</span>
+    <script>
+        var raak = 'red';
+        var nietraak = 'blue';
+        var counter = document.getElementById("output2");
+        var count = 0;
+        var zee = [1, 0, 0, 1, 0, 1, 0, 1, 1];
+        function bootraak(hetblokjenummer) {
+            var mijnblokje = document.getElementById("blokje" + hetblokjenummer);
+            if (zee[hetblokjenummer] == 0) {
+                mijnblokje.style.backgroundColor = raak;
+                count = count + 1;
+                
+            } else {
+                mijnblokje.style.backgroundColor = nietraak;
+                count = count - 1;
+            }
+            
+            schietPogingen();
+            document.getElementById("output2").innerHTML = count;
+            document.getElementById("output").innerHTML = aantalPogingen;
+            
+            
+
+        }
+
+        var aantalPogingen = 0;
+        function schietPogingen() {
+            aantalPogingen++;
+            if (aantalPogingen < 3) {
+                alert("je mag nog een keer schieten");
+            } else {
+                alert("jammer, je kogels zijn op");
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
+<style>
+    .square {
+        display: inline-block;
+        background-color: gray;
+        height: 100px;
+        width: 100px;
+    }
+</style>
