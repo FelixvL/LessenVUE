@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+ 
+   </style>
+   <script>
+       var alleWoorden = ["tandenborstel"];
+       var ingevoerdWoord = "";
+       var vorigWoord = "tandenborstel"; 
+       window.onload = function(){
+           vulkoffer();    
+       }
+       function nieuwitem(){
+           ingevoerdWoord = document.getElementById("vakantieitem").value;
+           var laatsteLetterVorigWoord = vorigWoord.charAt( vorigWoord.length - 1 );
+           var eersteLetterNieuwWoord = ingevoerdWoord.charAt(0);
+           if(eersteLetterNieuwWoord == laatsteLetterVorigWoord){
+               vorigWoord = ingevoerdWoord;
+               alleWoorden.push(vorigWoord);
+               vulkoffer();
+           }else{
+               alert("fout");
+           }
+       }
+       function vulkoffer(){
+           var eindString = "";
+           for(var x = 0; x < alleWoorden.length ; x++){
+               eindString += alleWoorden[x]+", ";
+           }
+           document.getElementById("dekoffer").innerHTML = eindString;
+       }
+   </script>
+</head>
+<body>
+   <input type="text" id="vakantieitem">
+   <input type="button" value="opnoemen" onclick="nieuwitem()">
+   <div id="dekoffer"></div>
+</body>
+</html>

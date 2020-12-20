@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 2px solid black;
+            color :white;
+        }
+    </style>
+    <script>         
+        var alfabet = "abcd";
+        var ingevoerdeLetter; 
+        var statusLetter = 0;
+        function checkletter(){
+            ingevoerdeLetter = document.getElementById("ingegeven").value;
+            console.log(   alfabet.charAt( statusLetter ) +"=="+  ingevoerdeLetter  ); 
+            if(alfabet.charAt(statusLetter) == ingevoerdeLetter){
+                console.log("bravo");
+                statusLetter++;
+            }else{
+                alert("klopt niet");
+            }        
+        } 
+    </script>
+</head>
+<body>
+    <input type="text" id="ingegeven">
+    <input type="button" value="raadt letter" onclick=checkletter() >
+</body>
+</html>

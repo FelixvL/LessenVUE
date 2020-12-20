@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+       div{
+           display: inline-block;
+           width: 100px;
+           height: 100px;
+           background-color: blue;
+           border: 2px solid black;
+           color :white;
+       }
+   </style>
+   <script>       
+       var speelveld = [
+         [0, 0, 0] ,       // index 0
+         [0, 0, 0] ,       // index 1
+         [0, 0, 0]         // index 2
+       ];
+       function werpsteen(hokjecode){   //  02      hokjecode[0]
+     //      alert(    bepaalhoogte()    );       // input
+           speelveld[    bepaalhoogte(hokjecode[1])      ][  hokjecode[1]  ] = 1;    // onze aanpassing
+//            speelveld[   bepaalhoogte( hokjecode[1]  )    ][hokjecode[1]] = 1;
+           speelbordTekenen();
+       }
+       function bepaalhoogte(rij){ // 2
+ 
+         for(var x = 0; x < speelveld[rij].length; x++){          
+           //speelveld[x][rij] = 1;
+           if(speelveld[x][rij] == 1){
+             return x-1;
+           }
+         }
+         return 2;
+       }
+       function speelbordTekenen(){
+           for(var x = 0; x < speelveld.length; x++){ 
+               for(var y = 0; y < speelveld[x].length; y++){
+                   if(speelveld[x][y] == 0){
+                       document.getElementById("hokje"+x+""+y).style.backgroundColor = 'blue';
+                   }else{
+                       document.getElementById("hokje"+x+""+y).style.backgroundColor = 'black';
+                   }
+               }   
+           }
+       }
+   </script>
+</head>
+<body>
+   <div id="hokje00" class="kolom0" onclick="werpsteen('00')">00</div>
+   <div id="hokje01" class="kolom1" onclick="werpsteen('01')">01</div>
+   <div id="hokje02" class="kolom2" onclick="werpsteen('02')">02</div>
+       <br>
+   <div id="hokje10" class="kolom0" onclick="werpsteen('10')">10</div>
+   <div id="hokje11" class="kolom1" onclick="werpsteen('11')">11</div>
+   <div id="hokje12" class="kolom2" onclick="werpsteen('12')">12</div>
+   <br>
+   <div id="hokje20" class="kolom0" onclick="werpsteen('20')">20</div>
+   <div id="hokje21" class="kolom1" onclick="werpsteen('21')">21</div>
+   <div id="hokje22" class="kolom2" onclick="werpsteen('22')">22</div>
+</body>
+</html>

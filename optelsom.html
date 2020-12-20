@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number1">
+    <input type="number" id="number2">
+    <input type="button" id="btnSum" value="Optellen" onClick="optellen('number1','number2')">
+    <!-- <div id="uitkomst"></div> -->
+
+    <script>
+        function optellen(textBox1, textBox2){
+				var x=document.getElementById(textBox1).value;
+				var y=document.getElementById(textBox2).value;
+				var sum=0;
+				sum=Number(x)+Number(y);
+				alert("Uitkomst is: " + sum);
+			}
+    </script>
+</body>
+</html>
