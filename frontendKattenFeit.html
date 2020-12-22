@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+       function feitOpvragen(){
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function(){
+               if(this.readyState == 4) {
+            //    var katFeit = JSON.parse(this.responseText);
+               document.getElementById("uitkomst").innerHTML = this.responseText;
+               }
+           };
+           xhr.open("GET","http://localhost:8080",true);
+           xhr.send();
+       };
+   </script>
+</head>
+<body>
+   <input type=button onclick=feitOpvragen() value=vraagFeitOp>
+   <div id=uitkomst></div>
+ 
+</body>
+</html>
+
