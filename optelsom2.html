@@ -9,9 +9,9 @@
 
 <body>
     <br />Enter first number:
-    <input type="text" id="txt1" name="text1">
+    <input type="number" id="txt1" name="text1">
     <br /> Enter second number:
-    <input type="text" id="txt2" name="text2">
+    <input type="number" id="txt2" name="text2">
     <br />Enter sum
     <input type="text" id="txt3" name="text3">
     <button onclick="myFunction()">Validate sum</button>
@@ -23,13 +23,17 @@
         function myFunction() {
             var y = document.getElementById("txt1").value;
             var z = document.getElementById("txt2").value;
-            var sum = parseInt(y.value) + parseInt(z.value);
-            // sum = Number(y.value) + Number(z.value);
-            if (sum > 100) {
-                alert('Sum ' + sum + ' is greater than 100')
+            var a = document.getElementById("txt3").value;
+            var sum = parseInt(y) + parseInt(z);
+            var check = parseInt(a);
+            if (sum  == check) {
+                alert('Sum ' + sum + ' ok')
             } else {
-                alert('Sum ' + sum + ' is less than 100')
+                alert('Sum ' + sum + ' niet ok')
             }
+            console.log(y);
+            console.log(z);
+            console.log(sum);
         }
     </script>
 </body>
